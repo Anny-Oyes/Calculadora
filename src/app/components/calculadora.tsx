@@ -1,39 +1,65 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import Display from './display'
-import Keyboard from './keyboard'
-
-export default function Calculadora() {
-    const [texto, setTexto] = useState('')
-    const [resultados, setresultados] = useState('')
-
-    const pressEnter = (texto: number) => {
-
-    }
+import React, { useState } from "react";
+import Display from "./display";
+import Keyboard from "./keyboard";
 
 
-    const pressEliminar = () => {
-        setTexto('')
-    }
+function Calculadora() {
+    const [texto, setTexto] = useState('');
+    const [resultado, setResultado] = useState<string | number>('');
 
-    const sendKey = (key: string) => {
-
-        if (key === 'C') {
-            pressEliminar()
-            return
-        }
-
+    const handleKeyPress = (key: string) => {
         if (key === '=') {
-            pressEnter(parseInt(texto))
-            return
+            try {
+                const calculandoResultado = calculateExpression(texto);
+                setResultado(calculandoResultado);
+                setTexto(calculandoResultado.toString());
+            } catch (error) {
+                setResultado('Error');
+            }
+        } else if (key === 'C') {
+            setTexto('');
+            setResultado('');
+        } else {
+            setTexto((prevText) => prevText + key);
         }
-        setTexto(texto + key)
-    }
+    };
+
+    const calculateExpression = (expression: any) => {
+        try {
+            const [num1, operator, num2] = expression.split('');
+
+            const number1 = parseFloat(num1);
+            const number2 = parseFloat(num2);
+
+            switch (operator) {
+                case '+':
+                    return number1 + number2;
+                case '-':
+                    return number1 - number2;
+                case '*':
+                    return number1 * number2;
+                case '/':
+                    if (number1 === 0) {
+                        return NaN;
+                    }
+                    return number1 / number2;
+                default:
+                    return NaN;
+            }
+        } catch (error) {
+            return NaN;
+        }
+    };
+
+
     return (
         <div>
-            <Display texto={texto} />
-            <Keyboard keyPress={sendKey} />
+            <Display texto={texto} resultado={resultado} />
+            <Keyboard keyPress={handleKeyPress} />
         </div>
-    )
+    );
 }
+
+export default Calculadora;

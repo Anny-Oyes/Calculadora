@@ -10,63 +10,63 @@ export default function Keyboard({ keyPress }: { keyPress?: any }) {
         <div className="mt-5 border p-1 ">
             <div className="flex flex-row justify-between">
                 <div className="w-5/6">
-                    <Buttons texto="C" keyPress={sendKey} />
+                    <Buttons texto="C" handleKeyPress={sendKey} />
                 </div>
                 <div className="w-1/3">
-                    <Buttons texto="÷" keyPress={sendKey} />
-                </div>
-            </div>
-            <div className="flex flex-row justify-between">
-                <div className="w-1/3">
-                    <Buttons texto="7" keyPress={sendKey} />
-                </div>
-                <div className="w-1/3">
-                    <Buttons texto="8" keyPress={sendKey} />
-                </div>
-                <div className="w-1/3">
-                    <Buttons texto="9" keyPress={sendKey} />
-                </div>
-                <div className="w-1/3">
-                    <Buttons texto="x" keyPress={sendKey} />
+                    <Buttons texto="/" handleKeyPress={sendKey} />
                 </div>
             </div>
             <div className="flex flex-row justify-between">
                 <div className="w-1/3">
-                    <Buttons texto="4" keyPress={sendKey} />
+                    <Buttons texto="7" handleKeyPress={sendKey} />
                 </div>
                 <div className="w-1/3">
-                    <Buttons texto="5" keyPress={sendKey} />
+                    <Buttons texto="8" handleKeyPress={sendKey} />
                 </div>
                 <div className="w-1/3">
-                    <Buttons texto="6" keyPress={sendKey} />
+                    <Buttons texto="9" handleKeyPress={sendKey} />
                 </div>
                 <div className="w-1/3">
-                    <Buttons texto="-" keyPress={sendKey} />
+                    <Buttons texto="*" handleKeyPress={sendKey} />
                 </div>
             </div>
             <div className="flex flex-row justify-between">
                 <div className="w-1/3">
-                    <Buttons texto="1" keyPress={sendKey} />
+                    <Buttons texto="4" handleKeyPress={sendKey} />
                 </div>
                 <div className="w-1/3">
-                    <Buttons texto="2" keyPress={sendKey} />
+                    <Buttons texto="5" handleKeyPress={sendKey} />
                 </div>
                 <div className="w-1/3">
-                    <Buttons texto="3" keyPress={sendKey} />
+                    <Buttons texto="6" handleKeyPress={sendKey} />
                 </div>
                 <div className="w-1/3">
-                    <Buttons texto="+" keyPress={sendKey} />
+                    <Buttons texto="-" handleKeyPress={sendKey} />
+                </div>
+            </div>
+            <div className="flex flex-row justify-between">
+                <div className="w-1/3">
+                    <Buttons texto="1" handleKeyPress={sendKey} />
+                </div>
+                <div className="w-1/3">
+                    <Buttons texto="2" handleKeyPress={sendKey} />
+                </div>
+                <div className="w-1/3">
+                    <Buttons texto="3" handleKeyPress={sendKey} />
+                </div>
+                <div className="w-1/3">
+                    <Buttons texto="+" handleKeyPress={sendKey} />
                 </div>
             </div>
             <div className="flex flex-row justify-between">
                 <div className="w-2/3">
-                    <Buttons texto="0" keyPress={sendKey} />
+                    <Buttons texto="0" handleKeyPress={sendKey} />
                 </div>
                 <div className="w-1/3">
-                    <Buttons texto="." keyPress={sendKey} />
+                    <Buttons texto="." handleKeyPress={sendKey} />
                 </div>
                 <div className="w-1/3">
-                    <Buttons texto="=" keyPress={sendKey} />
+                    <Buttons texto="=" handleKeyPress={sendKey} />
                 </div>
             </div>
         </div>
