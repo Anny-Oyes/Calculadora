@@ -11,7 +11,7 @@ export default function Keyboard({ keyPress }: { keyPress?: any }) {
         <div className="mt-5">
             <div className="flex flex-row justify-between">
                 <Buttons color="bg-gray-700" size="large" texto="C" handleKeyPress={sendKey} />
-                <Buttons color="bg-orange-400" size="small" texto="/" handleKeyPress={sendKey} />
+                <Buttons color="bg-orange-400" size="small" texto="÷" handleKeyPress={sendKey} />
             </div>
             <div className="flex flex-row justify-between">
                 <Buttons color="bg-gray-600" size="small" texto="7" handleKeyPress={sendKey} />

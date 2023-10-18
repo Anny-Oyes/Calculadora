@@ -28,7 +28,7 @@ function Calculadora() {
 
     const calculateExpression = (expression: any) => {
         try {
-            const match = expression.match(/(\d+)([\+\-\*\/])(\d+)/);
+            const match = expression.match(/(\d+)([\+\-\*\÷/])(\d+)/);
 
             if (!match) {
                 throw new Error('Mal');
@@ -45,7 +45,7 @@ function Calculadora() {
                     return numero1 - numero2;
                 case '*':
                     return numero1 * numero2;
-                case '/':
+                case '÷':
                     if (numero2 === 0) {
                         return NaN;
                     }
