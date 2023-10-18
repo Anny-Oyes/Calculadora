@@ -28,36 +28,44 @@ function Calculadora() {
 
     const calculateExpression = (expression: any) => {
         try {
-            const [num1, operator, num2] = expression.split('');
+            const match = expression.match(/(\d+)([\+\-\*\/])(\d+)/);
 
-            const number1 = parseFloat(num1);
-            const number2 = parseFloat(num2);
+            if (!match) {
+                throw new Error('Mal');
+            }
+
+            const numero1 = parseFloat(match[1]);
+            const operator = match[2];
+            const numero2 = parseFloat(match[3]);
 
             switch (operator) {
                 case '+':
-                    return number1 + number2;
+                    return numero1 + numero2;
                 case '-':
-                    return number1 - number2;
+                    return numero1 - numero2;
                 case '*':
-                    return number1 * number2;
+                    return numero1 * numero2;
                 case '/':
-                    if (number1 === 0) {
+                    if (numero2 === 0) {
                         return NaN;
                     }
-                    return number1 / number2;
+                    return numero1 / numero2;
                 default:
                     return NaN;
             }
         } catch (error) {
             return NaN;
         }
+
     };
 
 
     return (
         <div>
-            <Display texto={texto} resultado={resultado} />
-            <Keyboard keyPress={handleKeyPress} />
+            <div className="border rounded-lg border-slate-800 bg-slate-800 w-3/4 text-center">
+                <Display texto={texto} resultado={resultado} />
+                <Keyboard keyPress={handleKeyPress} />
+            </div>
         </div>
     );
 }
