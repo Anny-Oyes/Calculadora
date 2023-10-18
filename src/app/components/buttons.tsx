@@ -8,8 +8,8 @@ export default function Buttons({ texto, handleKeyPress, color, size }: { texto:
 
     const buttonSize: any = {
         small: 'text-lg w-1/4',
-        medium: "text-lg w-2/4",
-        large: 'text-lg w-3/4',
+        medium: "text-lg w-2/4 px-12",
+        large: 'text-lg w-3/4 px-24',
     };
 
     const sizeList = buttonSize[size] || '';
