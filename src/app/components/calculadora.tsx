@@ -30,10 +30,6 @@ function Calculadora() {
         try {
             const match = expression.match(/(\d+)([\+\-\*\÷/])(\d+)/);
 
-            if (!match) {
-                throw new Error('Mal');
-            }
-
             const numero1 = parseFloat(match[1]);
             const operator = match[2];
             const numero2 = parseFloat(match[3]);
@@ -54,7 +50,7 @@ function Calculadora() {
                     return NaN;
             }
         } catch (error) {
-            return NaN;
+            throw new Error();
         }
 
     };

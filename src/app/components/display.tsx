@@ -5,7 +5,7 @@ export default function Display({ texto, resultado }: { texto: string, resultado
     return (
         <div>
             <div className={'p-2 h-20 text-5xl font-bold text-right py-8 '}>
-                <span>{texto}</span>
+                <span>{resultado === 'Error' ? 'No valido' : texto}</span>
             </div>
         </div>
     );
