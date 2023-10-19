@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function Buttons({ texto, handleKeyPress, color, size }: { texto: string, handleKeyPress?: any, color: string, size: string }) {
 
-    const buttonColor = `${color} text-white font-bold py-4 hover:border-zinc-950`;
+    const buttonColor = `${color}text-white font-bold py-4 hover:border-zinc-950`;
 
     return (
         <div
