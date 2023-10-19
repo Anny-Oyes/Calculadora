@@ -59,7 +59,7 @@ function Calculadora() {
     return (
         <div>
             <div className="border rounded-lg border-slate-800 bg-slate-800 w-3/4 text-center">
-                <Display texto={texto} resultado={resultado} />
+                <Display texto={texto || "0"} resultado={resultado} />
                 <Keyboard keyPress={handleKeyPress} />
             </div>
         </div>
